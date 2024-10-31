@@ -1,0 +1,51 @@
+# Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
+# Because Django already contains server functionality in its framework, aka if server is a waiter, Django is the whole restaurant
+
+Potential Project Structure(?)
+project-folder/
+├── frontend/       # React application
+│   ├── public/     # For HTML, CSS, images, icons
+│   │   ├── index.html  # Main HTML file
+│   │   ├── styles.css   # Global CSS styles
+│   │   └── images/      # Images and icons
+│   ├── src/        # For JavaScript and React components
+│   │   ├── components/ # Reusable React components
+│   │   │   ├── FlashcardList.js  # Component to display flashcards
+│   │   │   ├── FlashcardForm.js   # Component to add new flashcards
+│   │   │   └── ...   # Other components
+│   │   ├── App.js    # Main application component
+│   │   ├── index.js  # Entry point for React
+│   │   └── api.js    # Functions to handle API requests to Django
+│   ├── package.json  # React project configuration
+│   └── .gitignore    # Files to ignore for version control
+├── backend/         # Django application
+│   ├── manage.py     # Django management script
+│   ├── backend/      # Django project files
+│   │   ├── __init__.py
+│   │   ├── settings.py # Settings for Django project
+│   │   ├── urls.py     # URL routing for the project
+│   │   └── wsgi.py     # WSGI configuration for deployment
+│   ├── flashcards/   # Django app for handling flashcards
+│   │   ├── migrations/ # Database migrations for flashcards
+│   │   ├── admin.py   # Admin interface configuration
+│   │   ├── models.py  # Database models for flashcards
+│   │   ├── serializers.py # Serializers for API
+│   │   ├── urls.py    # URL routing for flashcard API
+│   │   ├── views.py   # Views for handling requests
+│   │   └── tests.py   # Tests for flashcards app
+├── db/              # For database models or scripts-related files
+│   ├── db.sqlite3    # SQLite database file (if using SQLite)
+│   ├── seed.py       # Script to seed database with initial data (optional)
+└── .gitignore       # Files to ignore for version control
+
+I am utilizing such dependencies as: React for frontend and Django for backend. 
+The reasons why I choose Django Python for backend and React JavaScript for frontend: 
+    1.  This is a small to medium project that hasn't been fully planned out yet. 
+        Due to the fact that Django has plenty of built-in functionalities, it allows for fast and flexible development, 
+        enabling me to quickly adapt to additional ideas and changing requirements. 
+    2.  Django has bre-build Authentication and such Security features as password encryption and data access control, 
+        which is a good start for a beginner web developer who does not know how to implement those features from scratch. 
+    3.  Django does not utilize SQL for databases, but instead uses ORM. ORM has much easier syntax and implementation than SQL.
+    4.  Both Django and react are using languages that are popular and easy to learn. I am already familiar with Python.
+    5.  Both React and Django have great modularity which permits to reuse the code. 
+        This will make management and debugging of smaller components of the application much easier.
