@@ -28,7 +28,3 @@ def flashcard_list_api(request):
     serializer = FlashcardSerializer(flashcards, many=True)
     # Returns the serialized data as a JSON response to the client
     return Response(serializer.data)
-
-# ON MIXING VIEW TYPES: Django views that return HTML, like the first flashcard_list, 
-# and Django REST Framework views that return JSON responses, second flashcard_list, 
-# serve different purposes. Each should be defined in separate view functions or files to avoid confusion and errors.
