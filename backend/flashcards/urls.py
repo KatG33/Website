@@ -5,9 +5,10 @@ from . import views
 # The list below contains URL patters Django project needs to recognise.
 # Each URL provides an address to view a function that manages the request
 urlpatterns = [
-# '' - means that this pattern corresponds to the root URL of the program: http://127.0.0.1:8000/flashcards/
+# api/flashcards/ - represents a specific end point within the component that is intended for API requests
+#   also can be written as 'http://127.0.0.1:8000/api/flashcards/:'
 # 'views.flashcard_list' - indicates that when user visits the URL,
 #   Django supposed to call the flashcard_list function defined in the views module and processes request.
 # name='flashcard_list' - assigns a name to this URL pattern
-    path('', views.flashcard_list, name='flashcard_list'), 
+    path('api/flashcards/', views.flashcard_list, name='flashcard_list'), 
 ]

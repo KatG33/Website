@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'flashcards',
     'languageWebsite',
-    'rest_framework'
+    'rest_framework',
+    # CORS is a security feature implemented by web browsers to restrict web pages from making requests to a different domain
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# We are adding the React frontend address to the permitted domains
+# IT helps to prevent malicious websites from accessing sensitive data from our API and/or domain
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+]
