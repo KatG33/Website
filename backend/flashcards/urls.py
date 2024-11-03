@@ -10,5 +10,5 @@ urlpatterns = [
 # 'views.flashcard_list' - indicates that when user visits the URL,
 #   Django supposed to call the flashcard_list function defined in the views module and processes request.
 # name='flashcard_list' - assigns a name to this URL pattern
-    path('api/flashcards/', views.flashcard_list, name='flashcard_list'), 
+    path('api/flashcards/', views.flashcard_list_api, name='flashcard_list'), 
 ]

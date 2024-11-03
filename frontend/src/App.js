@@ -1,25 +1,18 @@
 import logo from './logo.svg';
+// The line below imports style sheet for App.js
 import './App.css';
+// The line below imports the main React library, 
+// enabling method to use React’s features to create components.
+import React from 'react';
+// The next FlashcardList component imports a component that supposed to display all the flashcards. 
+// It can be done by using command <FlashcardList />
+import FlashcardList from './components/FlashcardList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FlashcardList />
     </div>
   );
 }
-
 export default App;
