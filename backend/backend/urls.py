@@ -28,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # To look inside 'flashcards' component's configuration, 
     #       add flashcards/ at the end of a URL: http://127.0.0.1:8000/flashcards/
-    path('flashcards/', include('flashcards.urls')),
+    # path('flashcards/', include('flashcards.urls')),
+    path('', include('flashcards.urls')),
 ]

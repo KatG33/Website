@@ -22,7 +22,7 @@ def flashcard_list_html(request):
 # The line before, called decorator, specifies that THIS view will only accept GET requests.
 @api_view(['GET'])
 # The function below utilises a decorator to return JSON data with the help of the Django REST Framework for the API.
-def flashcard_list_api(request):
+def flashcard_list(request):
     flashcards = Flashcard.objects.all()
     # The line below will pass a list of flashcards to FlashcardSerializer with many=True, with multiple instances at once
     serializer = FlashcardSerializer(flashcards, many=True)
