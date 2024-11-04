@@ -23,6 +23,11 @@ from django.urls import include, path
 # 'urlpatterns' - list that stores all URLs. 
 #       Each item in this list defines a URL pattern and
 #       specifies which view or URL configuration should handle it
+# This templateView import will eventually be replaced once at least 3 pages 
+# of the website are fully running
+from django.views.generic import TemplateView
+
+
 urlpatterns = [
     # To see admin interface, visit http://127.0.0.1:8000/admin/ in a browser
     path('admin/', admin.site.urls),
@@ -30,4 +35,10 @@ urlpatterns = [
     #       add flashcards/ at the end of a URL: http://127.0.0.1:8000/flashcards/
     # path('flashcards/', include('flashcards.urls')),
     path('', include('flashcards.urls')),
+    # 
+    path(
+        "",
+        TemplateView.as_view(template_name="flashcards/base.html"),
+        name="home"
+    ),  
 ]
