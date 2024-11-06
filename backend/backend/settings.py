@@ -120,7 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# The line below Defines the URL prefix for serving static files. So, {% static 'css/style.css' %} in templates refers to /static/css/style.css.
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -132,3 +133,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  
 ]
+
+# Specifies additional directories (outside app folders) where 
+# Django will look for static files, such as static at the project root. 
+# This allows a central location for shared static assets across the project.
+STATICFILES_DIRS = [BASE_DIR / "static"]
