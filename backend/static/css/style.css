@@ -17,11 +17,23 @@ body {
     background: linear-gradient(150deg, #c4c4f5, #3f4660);
     color: #202025;
     background-color: #f0f0f9;
-    border: 1px solid #7183c5;
     border: 1px solid #383f59;
 }
 
-h1{
+:root {
+    --border: #d8dae1;
+    --text-color: #090909;      
+}
+
+article {
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    padding: 1em;
+    width: 50%;
+    margin: 0 auto; 
+}
+
+h1 {
     font-family: Calibri;
     font-size: 30px;
     text-align: center; 
@@ -30,26 +42,32 @@ h1{
 }
 
 h2 {
-    text-align: center; /* center-align the heading */
-    margin-top: 0; /* remove extra space above the heading */
+    text-align: center; 
+    margin-top: 0; 
+    margin: 0 auto;  
+}
+
+h3 {
+    text-align: center; 
+    margin: 2 auto;  
 }
 
 h4 {
-    margin-top: 0; /* remove extra space above subheadings */
+    margin: 0 auto;  
 }
 
 hr {
-    background: #6e48ad; /* purple accent color */
+    background: #6e48ad; 
     border: none;
-    height: 2px; /* thicker line */
+    height: 2px; 
 }
 
 button,
 a[role="button"] {
     color: rgb(233, 181, 181); 
-    text-decoration: none; /* removes underline on links */
+    text-decoration: none;
     background-color: #6e48ad; 
-    padding: 0.5em 1em; /* adds space inside the button */
+    padding: 0.5em 1em; 
     border: none;
     border-radius: 5px;
 }
@@ -62,7 +80,8 @@ input, select, textarea {
     cursor: pointer;
     font-weight: bold;
     margin: 0 12;
-    width: 100%; /* takes full width of the container */
-    border: 1px solid #99a8db; /* light gray border */
-    box-sizing: border-box; /* ensures padding is included in total width */
+    width: 100%; 
+    border: 1px solid #99a8db; 
+    /* the line below ensures padding is included in total width */
+    box-sizing: border-box; 
 }

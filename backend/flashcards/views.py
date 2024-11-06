@@ -1,13 +1,17 @@
 # Module below supposed to ccombine HTML with the data and return HTTP response
 from django.shortcuts import render
-# Imports flashcards' model and lets us interact with the object Flashcard
-from .models import Flashcard
+
 # A decorrator that defines allowed HTTP methods, determines functions like GET and/or POST
 from rest_framework.decorators import api_view
 # 'import Response' sends data back as an HTTP response
 from rest_framework.response import Response
 # converts Flashcard model and data into JSON format
 from .serializers import FlashcardSerializer
+# 'ListView' is a tool in Django that can show a list of items
+from django.views.generic import (ListView,)
+# Imports flashcards' model and lets us interact with the object Flashcard
+from .models import Flashcard
+
 # Create your views here.
 # Argument request is a HTTP request from the browsed, Passed as a paramether, handles request to flashcards,
 # rendering HTML for the flashcards view
@@ -28,3 +32,11 @@ def flashcard_list(request):
     serializer = FlashcardSerializer(flashcards, many=True)
     # Returns the serialized data as a JSON response to the client
     return Response(serializer.data)
+
+class ViewFlashcards(ListView):
+    model = Flashcard
+    # Sorting order set is: first by the number of the box, and then by the earliest date cof creation
+    queryset = Flashcard.objects.all().order_by("box", "-date_created")
+    # I have to specify the path to the flashcard template, so DJANGO STOPS FUCKING LOSING IT
+    # template_name = "flashcards/listOfCards.html" 
+

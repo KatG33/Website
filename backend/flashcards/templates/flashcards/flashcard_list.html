@@ -1,0 +1,18 @@
+<!-- First, this file gets connected to the main html file, called base.html -->
+{% extends "flashcards/base.html" %}
+
+<!-- Using template tags to mark wher ethe content of this 'paragraph' or a 'block' will go -->
+{% block content %}
+    <h2>All Cards</h2>
+
+    {% for card in flashcard_list %}
+        <!-- the line below ensures that each flashcard has its box number displayed -->
+        <h3>🗃 Box {{ card.box }}</h3>
+
+        <!-- The paragraph below dispayes the details of the card -->
+        <article>
+            {{ card }}
+        </article>
+    {% endfor %}
+
+{% endblock content %}
