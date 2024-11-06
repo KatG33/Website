@@ -1,0 +1,66 @@
+/* Why do we have a .css code in backend static folder? */
+/* The styles that are located in static folder for Django backend 
+are meant to style the page layout before React is loaded. 
+This includes general page styling, like colors, fonts, and layout 
+because that will affect both Django-rendered HTMLs and React components. */
+body {
+    font-family: Calibri;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    height: 100vh;
+    margin: 10 10;
+    padding: 20px; 
+    background: linear-gradient(150deg, #c4c4f5, #3f4660);
+    color: #202025;
+    background-color: #f0f0f9;
+    border: 1px solid #7183c5;
+    border: 1px solid #383f59;
+}
+
+h1{
+    font-family: Calibri;
+    font-size: 30px;
+    text-align: center; 
+    justify-content: center; 
+    color: black;
+}
+
+h2 {
+    text-align: center; /* center-align the heading */
+    margin-top: 0; /* remove extra space above the heading */
+}
+
+h4 {
+    margin-top: 0; /* remove extra space above subheadings */
+}
+
+hr {
+    background: #6e48ad; /* purple accent color */
+    border: none;
+    height: 2px; /* thicker line */
+}
+
+button,
+a[role="button"] {
+    color: rgb(233, 181, 181); 
+    text-decoration: none; /* removes underline on links */
+    background-color: #6e48ad; 
+    padding: 0.5em 1em; /* adds space inside the button */
+    border: none;
+    border-radius: 5px;
+}
+
+input, select, textarea {
+    background-color: #4a8282;
+    color: #000000;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 12;
+    width: 100%; /* takes full width of the container */
+    border: 1px solid #99a8db; /* light gray border */
+    box-sizing: border-box; /* ensures padding is included in total width */
+}

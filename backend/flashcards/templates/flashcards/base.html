@@ -1,4 +1,7 @@
 <!-- cards/templates/cards/base.html -->
+ <!-- Keep in mind, every time I forget to add this template tag,
+  at the beginning of the file, it crashes the page -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +12,12 @@
     <meta name="description" content="Leiner Flashcard Learning System project" />
     <title>Leiner Flashcards Learning System integrated with Custom-made LMS</title>
     <!-- This loads a CSS file to add style to the page.s a Django command that helps find where the CSS file is stored -->
-    <link rel="stylesheet" "{% static 'css/style.css' %}"/>
+    <!-- MAKE SURE THE SYNTAX OF LINK tag is correct-->
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}"/>
 </head>
 
-<body>
 
+<body>
     <!--Do I have to have this part. Please make sure you understand the mechanics of it -->
     <!-- An empty div where React will display its content. -->
     <div id="root"></div> 
