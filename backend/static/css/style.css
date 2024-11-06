@@ -3,15 +3,17 @@
 are meant to style the page layout before React is loaded. 
 This includes general page styling, like colors, fonts, and layout 
 because that will affect both Django-rendered HTMLs and React components. */
+
+
+
 body {
     font-family: Calibri;
     font-size: 16px;
     align-items: center;
     justify-content: center; 
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 10 10;
-    padding: 20px; 
+    padding-top: 20px; 
     background: linear-gradient(150deg, #c4c4f5, #3f4660);
     color: #202025;
     background-color: #f0f0f9;
