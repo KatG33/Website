@@ -1,6 +1,6 @@
+import random
 # Module below supposed to ccombine HTML with the data and return HTTP response
 from django.shortcuts import render
-
 # A decorrator that defines allowed HTTP methods, determines functions like GET and/or POST
 from rest_framework.decorators import api_view
 # 'import Response' sends data back as an HTTP response
@@ -9,12 +9,20 @@ from rest_framework.response import Response
 from .serializers import FlashcardSerializer
 # 'ListView' is a tool in Django that can show a list of items
 # 'CreateView' is CreateView can: automatically generate form, handle validations, create object and redirect
-from django.views.generic import (ListView,CreateView,UpdateView,)
+from django.views.generic import (ListView,CreateView,UpdateView,DeleteView)
 # Imports flashcards' model and lets us interact with the object Flashcard
 from .models import Flashcard
 # 'reverse': This tool looks up the web address right away when you ask for it.
 # 'reverse_lazy' module waits to look up the web address until it's actually needed. 
 from django.urls import reverse_lazy
+# module below finds an item in a collection. If it doesn't find an item not, 
+# it shows a "Not Found" error to let us know it doesn’t exist.
+from django.shortcuts import get_object_or_404, redirect
+# CardCheckForm is a form used for collecting and handling user input
+from .forms import CardCheckForm
+
+from django.views.generic.edit import DeleteView
+
 
 # Create your views here.
 # Argument request is a HTTP request from the browsed, Passed as a paramether, handles request to flashcards,
@@ -52,8 +60,13 @@ class FlashcardCreateView(CreateView):
 class FlashcardUpdateView(FlashcardCreateView, UpdateView):
     success_url = reverse_lazy("flashcard-list")
     
+class FlashcardDeleteView(DeleteView):
+    model = Flashcard
+    success_url = reverse_lazy("flashcard-list")
+    
 class BoxView(ViewFlashcards):
     template_name = "flashcards/box.html"
+    form_class = CardCheckForm
 
     def get_queryset(self):
         return Flashcard.objects.filter(box=self.kwargs["box_num"])
@@ -61,4 +74,14 @@ class BoxView(ViewFlashcards):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["box_number"] = self.kwargs["box_num"]
+        if self.object_list:
+            context["check_card"] = random.choice(self.object_list)
         return context
+    
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            card = get_object_or_404(Flashcard, id=form.cleaned_data["card_id"])
+            card.move(form.cleaned_data["solved"])
+
+        return redirect(request.META.get("HTTP_REFERER"))

@@ -2,25 +2,21 @@
 {% extends "flashcards/base.html" %}
 <!-- Purpose of a tag below is to include the 'humanize' library. The lib has filters making data more readable -->
 {% load humanize %}
-
 <!-- Using template tags to mark wher ethe content of this 'paragraph' or a 'block' will go -->
 {% block content %}
     <h2>All Cards</h2>
-
-    <a href="{% url 'flashcard-create' %}" role="button">
-        ✨ Create New Card
-    </a>
-    
-    {% for card in flashcard_list %}
-        <!-- wrapping h3 in 'ifchanged' template tag to show new box headline ONCE ONLY-->
-        {% ifchanged %}
-            <!-- the line below ensures that each flashcard has its box number displayed -->
-            <h3>🗃 {{ card.box | ordinal }} Box</h3>
-        {% endifchanged %}
-        <!-- 'include' adds contents of HTML file into the current one -->
-        {% include "flashcards/flashcard.html" %}
-        <!-- The paragraph below dispayes the details of the card -->
-        
-    {% endfor %}
-
-{% endblock content %}
+    <a href="{% url 'flashcard-create' %}" role="button">✨ Create New Card</a>
+    <ul>
+        {% for card in flashcard_list %}
+            {% ifchanged card.box %}
+                <h3>🗃 {{ card.box|ordinal }} Box</h3>
+            {% endifchanged %}
+            <li>
+                <strong>Question:</strong> {{ card.question }}<br>
+                <strong>Answer:</strong> {{ card.answer }}<br>
+                <a href="{% url 'flashcard-update' card.pk %}" role="button">✏️ Edit</a>
+                <a href="{% url 'flashcard-delete' card.pk %}" role="button">🗑️ Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

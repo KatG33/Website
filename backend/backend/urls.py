@@ -41,4 +41,5 @@ urlpatterns = [
         TemplateView.as_view(template_name="flashcards/base.html"),
         name="home"
     ),  
+    
 ]

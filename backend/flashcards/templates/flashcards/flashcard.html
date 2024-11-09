@@ -1,8 +1,28 @@
+<!-- Just a container -->
 <article>
+    <!-- This displays the question of the flashcard -->
     <h4>{{ card.question }}</h4>
-    <p>{{ card.answer }}</p>
-    <hr>
-    <a href="{% url 'flashcard-update' card.id %}" role="button">
-        ✏️ Edit Card
-    </a>
+    <!-- This block renders different HTML depending on the value of check_card -->
+    
+    {% if not check_card %}
+        <p>{{ card.answer }}</p>
+        <hr>
+        <a href="{% url 'flashcard-update' card.id %}" role="button">
+            ✏️ Edit Card
+        </a>
+        <a href="{% url 'flashcard-delete' card.id %}" role="button">
+            🗑️ Delete Card
+        </a>
+
+    {% else %}
+        <details>
+            <summary>Reveal Answer</summary>
+            <p>{{ card.answer }}</p>
+        </details>
+        <hr>
+        <!-- horizontal rule for visual separation -->
+        {% include "flashcards/flashcard_check_form.html" with solved=True %}
+        {% include "flashcards/flashcard_check_form.html" with solved=False %}
+    {% endif %}
+    
 </article>

@@ -33,4 +33,9 @@ urlpatterns = [
         views.BoxView.as_view(),
         name="box"
     ),
+    path(
+        "delete/<int:pk>/",
+        views.FlashcardDeleteView.as_view(),
+        name="flashcard-delete"
+    ),
 ]
