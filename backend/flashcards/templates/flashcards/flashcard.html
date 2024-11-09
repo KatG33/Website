@@ -7,10 +7,10 @@
     {% if not check_card %}
         <p>{{ card.answer }}</p>
         <hr>
-        <a href="{% url 'flashcard-update' card.id %}" role="button">
+        <a href="{% url 'flashcard-update' card.id %}" role="button" id="update">
             ✏️ Edit Card
         </a>
-        <a href="{% url 'flashcard-delete' card.id %}" role="button">
+        <a href="{% url 'flashcard-delete' card.id %}" role="button" id = "delete">
             🗑️ Delete Card
         </a>
 

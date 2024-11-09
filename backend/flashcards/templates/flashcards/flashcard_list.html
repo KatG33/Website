@@ -5,17 +5,19 @@
 <!-- Using template tags to mark wher ethe content of this 'paragraph' or a 'block' will go -->
 {% block content %}
     <h2>All Cards</h2>
-    <a href="{% url 'flashcard-create' %}" role="button">✨ Create New Card</a>
+    <div id = 'newCard'>
+        <a href="{% url 'flashcard-create' %}" role="button" id="create">✨ Create New Card</a>
+    </div>
     <ul>
         {% for card in flashcard_list %}
             {% ifchanged card.box %}
                 <h3>🗃 {{ card.box|ordinal }} Box</h3>
             {% endifchanged %}
             <li>
-                <strong>Question:</strong> {{ card.question }}<br>
-                <strong>Answer:</strong> {{ card.answer }}<br>
-                <a href="{% url 'flashcard-update' card.pk %}" role="button">✏️ Edit</a>
-                <a href="{% url 'flashcard-delete' card.pk %}" role="button">🗑️ Delete</a>
+                <div id = 'flashcard'> <strong>Question:</strong> {{ card.question }}<br>
+                <strong>Answer:</strong> {{ card.answer }}<br> </div>
+                <div id = 'buttons'><a href="{% url 'flashcard-update' card.pk %}" role="button" id="update">✏️ Edit</a>
+                <a href="{% url 'flashcard-delete' card.pk %}" role="button" id="delete">🗑️ Delete</a></div>
             </li>
         {% endfor %}
     </ul>

@@ -18,7 +18,9 @@
 
 <header>
     <h1>Flashcards App</h1>
-    {% include "flashcards/navigation.html" %}
+    <div id="navigation">
+        {% include "flashcards/navigation.html" %}
+    </div> 
 </header>
 
 <body>
@@ -27,7 +29,7 @@
     <div id="root"></div> 
     <!-- The line below Loads a JavaScript file that starts the React app, 
      which will populate the root div with content. !-->
-    <script src="{% static 'js/main.js' %}"></script>
+    <!-- <script src="{% static 'js/main.js' %}"></script>-->
 
     <header>
         <h1>Leiner Flashcards Learning System</h1>
