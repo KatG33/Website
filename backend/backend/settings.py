@@ -28,8 +28,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application definitions:
+# it's common practice to list built-in apps first, followed by third-party apps, and then custom apps.
 
+# Built-in Django apps: These provide essential functionalities:
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,11 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flashcards',
-    'languageWebsite',
+    "django.contrib.humanize",
+    # Adds REST API capabilities.
     'rest_framework',
-    # CORS is a security feature implemented by web browsers to restrict web pages from making requests to a different domain
-    'corsheaders'
+    # CORS is a security feature implemented by web browsers to restrict web pages 
+    # from making requests to a different domain, also called Cross-Origin Resource Sharing (CORS)
+    'corsheaders',
+    'languageWebsite',
+    # Specifies the CardsConfig class from the cards app
+    'flashcards.apps.FlashcardsConfig',
 ]
 
 MIDDLEWARE = [
