@@ -34,4 +34,12 @@ class Flashcard(models.Model):
     # This method will be called when conversion of an Obj to String is required
     def __str__(self):
         return self.question
+    
+    def move(self, solved):
+        new_box = self.box + 1 if solved else BOXES[0]
+
+        if new_box in BOXES:
+            self.box = new_box
+            self.save()
+        return self
 

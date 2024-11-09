@@ -1,0 +1,25 @@
+{% extends "flashcards/base.html" %}
+
+{% block content %} 
+    {% if card %}
+        <h2>✏️ Edit Card</h2>
+    {% else %}
+        <h2>✨ Create New Card</h2>
+    {% endif %}
+
+    <!-- <form method="post"> defines an element that sends data using HTTP POST method.
+    Using the method="post" ensures that data sent via the form is not appended to the URL, 
+    which is typical for forms that create or modify data.-->
+    <form method="post">
+        <!-- {% csrf_token %}, tag inserts a CSRF (Cross-Site Request Forgery) token into the form for security.
+        It helps prevent attacks by ensuring that the request came from an authorized user. -->
+        {% csrf_token %}
+        <!--  is a method that outputs the form fields as a series of paragraph elements (<p>), 
+        making it easy to render and style. -->
+        {{ form.as_p }}
+        <input type="submit" value="Save Flashcard">
+    </form>
+    <a href="{% url 'flashcard-list' %}">
+        Cancel
+    </a>
+{% endblock %}

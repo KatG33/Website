@@ -8,9 +8,13 @@ from rest_framework.response import Response
 # converts Flashcard model and data into JSON format
 from .serializers import FlashcardSerializer
 # 'ListView' is a tool in Django that can show a list of items
-from django.views.generic import (ListView,)
+# 'CreateView' is CreateView can: automatically generate form, handle validations, create object and redirect
+from django.views.generic import (ListView,CreateView,UpdateView,)
 # Imports flashcards' model and lets us interact with the object Flashcard
 from .models import Flashcard
+# 'reverse': This tool looks up the web address right away when you ask for it.
+# 'reverse_lazy' module waits to look up the web address until it's actually needed. 
+from django.urls import reverse_lazy
 
 # Create your views here.
 # Argument request is a HTTP request from the browsed, Passed as a paramether, handles request to flashcards,
@@ -40,3 +44,21 @@ class ViewFlashcards(ListView):
     # I have to specify the path to the flashcard template, so DJANGO STOPS FUCKING LOSING IT
     # template_name = "flashcards/listOfCards.html" 
 
+class FlashcardCreateView(CreateView):
+    model = Flashcard
+    fields = ["question", "answer", "box"]
+    success_url = reverse_lazy("flashcard-create")
+    
+class FlashcardUpdateView(FlashcardCreateView, UpdateView):
+    success_url = reverse_lazy("flashcard-list")
+    
+class BoxView(ViewFlashcards):
+    template_name = "flashcards/box.html"
+
+    def get_queryset(self):
+        return Flashcard.objects.filter(box=self.kwargs["box_num"])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["box_number"] = self.kwargs["box_num"]
+        return context

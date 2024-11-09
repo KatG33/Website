@@ -18,4 +18,19 @@ urlpatterns = [
         views.ViewFlashcards.as_view(),
         name="flashcard-list"
     ),
+    path(
+        "new",
+        views.FlashcardCreateView.as_view(),
+        name="flashcard-create"
+    ),
+     path(
+        "edit/<int:pk>",
+        views.FlashcardUpdateView.as_view(),
+        name="flashcard-update"
+    ),
+     path(
+        "box/<int:box_num>",
+        views.BoxView.as_view(),
+        name="box"
+    ),
 ]
