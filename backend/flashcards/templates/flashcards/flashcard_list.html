@@ -13,10 +13,10 @@
             <!-- the line below ensures that each flashcard has its box number displayed -->
             <h3>🗃 {{ card.box | ordinal }} Box</h3>
         {% endifchanged %}
+        <!-- 'include' adds contents of HTML file into the current one -->
+        {% include "flashcards/card.html" %}
         <!-- The paragraph below dispayes the details of the card -->
-        <article>
-            {{ card }}
-        </article>
+        
     {% endfor %}
 
 {% endblock content %}
