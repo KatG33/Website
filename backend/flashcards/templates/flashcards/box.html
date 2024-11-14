@@ -2,8 +2,10 @@
 {% load humanize %}
 
 {% block content %}
-    <h2> 🗃 {{ box_number | ordinal }} Box</h2>
-    <mark>{{ object_list | length }}</mark> Flashcard {{ object_list | pluralize }} left in box.
+    <!-- <h2> {{ box_number | ordinal }} Box</h2> -->
+    <div id="mark">
+        <mark>{{ object_list | length }}</mark> Flashcard{{ object_list | pluralize }} left in the box.
+    <div>
     <hr>
     <div id="check">
         {% if check_card %}

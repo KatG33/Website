@@ -139,9 +139,6 @@ div#check{
     align-items: center;
 }
 
-div#moveCard{
-    padding: 10px 10px;
-}
 
 div#cancelButton{
     color: rgb(249, 249, 249); 
@@ -153,5 +150,18 @@ div#cancelButton{
     padding: 0.5em 1em; 
     border: solid;
     border-radius: 5px;
+}
+
+div#mark {
+    text-align: center; 
+}
+
+.customSubmit {
+    width: 200px;
+    height: 50px;
+}
+
+.customSubmit:hover {
+    background-color: #f89494; /* Darker red on hover */
 }
 

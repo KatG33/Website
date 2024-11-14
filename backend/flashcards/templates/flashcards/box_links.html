@@ -3,7 +3,7 @@
 {% for box in boxes %}
     <div id="BoxList">
         <a href="{% url 'box' box_num=box.number %}">
-            🗃 {{ box.number | ordinal }} Box <mark>{{ box.card_count }}</mark>
+            🗳️ {{ box.number | ordinal }} Box <mark class="cardAmount">{{ box.card_count }}</mark>
         </a>
     </div>
 {% endfor %}

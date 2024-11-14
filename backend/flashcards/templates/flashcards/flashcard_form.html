@@ -1,12 +1,10 @@
 {% extends "flashcards/base.html" %}
 
 {% block content %} 
-    {% if card %}
-        <h2>✏️ Edit Card</h2>
-    {% elif new_card %}
-        <h2>✨ Create New Card</h2>
+    {% if flashcard %}
+        <h2> ✏️ Edit Card </h2>
     {% else %}
-        <h2>🗑️ Delete Card</h2>
+        <h2> ✨ Create New Card </h2>
     {% endif %}
 
     <!-- <form method="post"> defines an element that sends data using HTTP POST method.
