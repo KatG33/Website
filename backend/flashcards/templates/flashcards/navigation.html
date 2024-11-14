@@ -1,6 +1,6 @@
 {% load cards_tags %}
-
-<nav>
-    <a href="{% url 'flashcard-list' %}">🗂 All Cards</a>
+<!--- This file specifically edits box around navigation text-->
+<nav id="navigation">
+    <div name="space"><a  href="{% url 'flashcard-list' %}" >🗄️ ALL CARDS</a></div>
     {% boxes_as_links %}
 </nav>

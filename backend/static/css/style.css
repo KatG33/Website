@@ -140,7 +140,7 @@ div#check{
 }
 
 
-div#cancelButton{
+div#cancelButton #delConfirm{
     color: rgb(249, 249, 249); 
     padding: 10px 10px; 
     margin: 0px 10px;  
@@ -154,7 +154,7 @@ div#cancelButton{
 
 div#mark {
     text-align: center; 
-}
+} 
 
 .customSubmit {
     width: 200px;
@@ -165,3 +165,28 @@ div#mark {
     background-color: #f89494; /* Darker red on hover */
 }
 
+
+nav#navigation{
+    text-align: center; 
+}
+
+
+div[name="space"] { 
+    background-color: lightblue;
+    padding: 10px 10px; 
+    margin: 10px 10px;  
+}
+
+#cardAmount{
+    background-color: inherit;
+}
+
+#delConfirm {
+    color:black;
+    margin: 50px 20px;  
+    background-color: white; 
+    padding: 2em 1em; 
+    border: solid;
+    border-radius: 5px;
+    text-align: center; 
+}

@@ -4,7 +4,7 @@
 {% block content %}
     <!-- <h2> {{ box_number | ordinal }} Box</h2> -->
     <div id="mark">
-        <mark>{{ object_list | length }}</mark> Flashcard{{ object_list | pluralize }} left in the box.
+        <mark id="cardAmount">{{ object_list | length }}</mark> Flashcard{{ object_list | pluralize }} left in the box.
     <div>
     <hr>
     <div id="check">

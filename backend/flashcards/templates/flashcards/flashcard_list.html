@@ -15,12 +15,16 @@
             {% ifchanged card.box %}
                 <h3>🗃 {{ card.box|ordinal }} Box</h3>
             {% endifchanged %}
+
             <li>
                 <div id = 'flashcard'> <strong>Question:</strong> {{ card.question }}<br>
                 <strong>Answer:</strong> {{ card.answer }}<br> </div>
+                
+                <!-- the dev containeer below helps to edit not hte text but margins and padding for elements inside-->
                 <div id = 'buttons'><a href="{% url 'flashcard-update' card.pk %}" role="button" id="update">✏️ Edit</a>
                 <a href="{% url 'flashcard-delete' card.pk %}" role="button" id="delete">🗑️ Delete</a></div>
             </li>
+            
         {% endfor %}
     </ul>
 {% endblock %}

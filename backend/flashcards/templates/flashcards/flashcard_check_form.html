@@ -1,5 +1,9 @@
 <form method="post">
+        <!--This template tag inserts a hidden input field containing a CSRF token into the form. 
+        Django uses CSRF tokens to protect against Cross-Site Request Forgery attacks by ensuring that POST requests originate from trusted sources.-->
     {% csrf_token %}
+    <!-- This line creates a hidden input field named card_id with its value set to {{ card.id }}, 
+     which is a template variable representing the unique identifier of a card object. -->
     <input type="hidden" name="card_id" value="{{ card.id }}">
     <input type="hidden" name="solved" value="{{ solved }}">
     {% if solved %}
