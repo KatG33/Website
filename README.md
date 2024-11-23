@@ -1,5 +1,5 @@
 # Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
-# Because Django is a full stack framework, it already contains server functionality in its framework, 
+# Because Django is a full-stack framework, it already contains server functionality in its framework, 
 
 
 Potential Project Structure v0.2:
@@ -39,7 +39,7 @@ project-folder/
 │   ├── seed.py       # Script to seed database with initial data (optional)
 └── .gitignore       ## Files to ignore for version control, so they don't get mixed up in project history
 
-I am utilizing such dependencies as: React for frontend and Django for backend. 
+I am utilizing such dependencies as React for frontend and Django for backend. 
 The reasons why I choose Django Python for backend and React JavaScript for frontend: 
     1.  This is a small to medium project that hasn't been fully planned out yet. 
         Due to the fact that Django has plenty of built-in functionalities, it allows for fast and flexible development, 
@@ -47,6 +47,6 @@ The reasons why I choose Django Python for backend and React JavaScript for fron
     2.  Django has bre-build Authentication and such Security features as password encryption and data access control, 
         which is a good start for a beginner web developer who does not know how to implement those features from scratch. 
     3.  Django does not utilize SQL for databases, but instead uses ORM. ORM has much easier syntax and implementation than SQL.
-    4.  Both Django and react are using languages that are popular and easy to learn. I am already familiar with Python.
+    4.  Both Django and React use popular and easy-to-learn languages. I am already familiar with Python.
     5.  Both React and Django have great modularity which permits to reuse the code. 
-        This will make management and debugging of smaller components of the application much easier.
+        This will make the management and debugging of smaller components of the application much easier.
