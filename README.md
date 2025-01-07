@@ -1,8 +1,7 @@
-# Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
-# Because Django is a full-stack framework, it already contains server functionality in its framework, 
+Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
+Because Django is a full-stack framework, it already contains server functionality in its framework.
 
-
-Potential Project Structure v0.2:
+'''Potential Project Structure v0.2:
 project-folder/
 ├── frontend/       # Everything that related to the part of the website interacted with and seen by the user
 │   ├── public/     # For HTML, CSS, images, icons files that will be shown on the website
@@ -38,6 +37,7 @@ project-folder/
 │   ├── db.sqlite3    # This is the actual database file (if you’re using SQLite). It’s where all the flashcard data is stored
 │   ├── seed.py       # Script to seed database with initial data (optional)
 └── .gitignore       ## Files to ignore for version control, so they don't get mixed up in project history
+'''
 
 I am utilizing such dependencies as React for frontend and Django for backend. 
 The reasons why I choose Django Python for backend and React JavaScript for frontend: 
