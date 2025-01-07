@@ -1,4 +1,4 @@
-```
+
 Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
 Because Django is a full-stack framework, it already contains server functionality in its framework.
 
@@ -50,4 +50,4 @@ The reasons why I choose Django Python for backend and React JavaScript for fron
     3.  Django does not utilize SQL for databases, but instead uses ORM. ORM has much easier syntax and implementation than SQL.
     4.  Both Django and React use popular and easy-to-learn languages. I am already familiar with Python.
     5.  Both React and Django have great modularity which permits to reuse the code. 
-        This will make the management and debugging of smaller components of the application much easier.```
+        This will make the management and debugging of smaller components of the application much easier.
