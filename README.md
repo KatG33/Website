@@ -1,4 +1,4 @@
-
+```
 Unlike the previous version of the website's structure, I don't need a separate -server/ folder,
 Because Django is a full-stack framework, it already contains server functionality in its framework.
 
