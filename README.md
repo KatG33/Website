@@ -77,12 +77,9 @@ project-folder/
 ## The explanation behind the choice of frameworks: 
 I am utilising such dependencies as React for the frontend and Django for the backend. 
 The reasons why I chose Django Python for the backend and React JavaScript for the frontend: 
-    1.  This is a small to medium project that hasn't been fully planned out yet. 
-        Due to the fact that Django has plenty of built-in functionalities, it allows for fast and flexible development, 
-        enabling me to quickly adapt to additional ideas and changing requirements. 
-    2.  Django has built-in Authentication and security features such as password encryption and data access control, 
-        which is a good start for a beginner web developer who does not know how to implement those features from scratch. 
-    3.  Django does not utilise SQL for databases, but instead uses ORM. ORM has a much easier syntax and implementation than SQL.
-    4.  Both Django and React use popular and easy-to-learn languages. I am already familiar with Python.
-    5.  Both React and Django have great modularity, which permits to reuse the code. 
-        This will make the management and debugging of smaller components of the application much easier.
+
+1. This is a small to medium project that hasn't been fully planned out yet. Due to the fact that Django has plenty of built-in functionalities, it allows for fast and flexible development, enabling me to quickly adapt to additional ideas and changing requirements. 
+2. Django has built-in Authentication and security features such as password encryption and data access control, which is a good start for a beginner web developer who does not know how to implement those features from scratch. 
+3. Django does not utilise SQL for databases, but instead uses ORM. ORM has a much easier syntax and implementation than SQL.
+4. Both Django and React use popular and easy-to-learn languages. I am already familiar with Python.
+5. Both React and Django have great modularity, which permits to reuse of the code. This will make the management and debugging of smaller components of the application much easier.
