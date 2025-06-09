@@ -18,7 +18,7 @@ I based this project on the tutorial from Real Python – Build a Flashcard App 
 
 ## How to Run This Project:
 1. Download the Project 
-2. Navigate to the backend folder via 'cd backend' command
+2. In PowerShell window navigate to the backend folder via 'cd backend' command
 3. Create and activate a virtual environment via commands:
 'python -m venv venv' and then
  'source venv/bin/activate'
@@ -30,6 +30,14 @@ python manage.py migrate
 python manage.py runserver
 7. Visit the app in your browser:
 http://127.0.0.1:8000/
+
+## "No module named 'django'" Error and its solution
+If at step 6 or 7 you get a message: ModuleNotFoundError: No module named 'django'
+This means that you don't have Django installed to run the project. To install Django, try following steps:
+1. Activate venv (Virtual Environment)
+ On Windows: venv\Scripts\activate
+ On Mac or Linux: source venv/bin/activate
+2. Install Django inside Venv via the command 'pip install django'.
 
 ## The basis and explanation for the project's structure
 ```
