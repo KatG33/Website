@@ -32,22 +32,6 @@ python manage.py runserver
 7. Visit the app in your browser:
 http://127.0.0.1:8000/
 
-## Possible Errors when Running this Project and their Solutions
-### "No module named 'django'" Error and its solution
-If at step 6 or 7 you get a message: ModuleNotFoundError: No module named 'django'
-This means that you don't have Django installed to run the project. To install Django, try the following steps:
-1. Activate venv (Virtual Environment)
- On Windows: venv\Scripts\activate
- On Mac or Linux: source venv/bin/activate
-2. Install Django inside Venv via the command 'pip install django'.
-
-### ModuleNotFoundError: No module named 'rest_framework'
-That means your Django project is trying to use Django REST Framework (DRF), but it's not installed yet in your virtual environment.
-rest_framework refers to Django REST Framework, a powerful library that lets its users build APIs in Django.
-This project heavily utilises serializers.py and API views. Hence, one needs to ensure they have Django REST Framework (DRF) installed.
-
-To install DRF, activate your venv(virtual environment) via PowerShell and run the command 'pip install djangorestframework'.
-
 ## The basis and explanation for the project's structure
 ```
 Unlike the previous version of the website's structure, I don't need a separate server/ folder,
