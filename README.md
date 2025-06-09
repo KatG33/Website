@@ -24,13 +24,10 @@ I based this project on the tutorial from Real Python – Build a Flashcard App 
  'source venv/bin/activate'
  OR if using Windows
  venv\Scripts\activate
-
 5. Run migrations:
 python manage.py migrate
-
 6. Start the development server:
 python manage.py runserver
-
 7. Visit the app in your browser:
 http://127.0.0.1:8000/
 
