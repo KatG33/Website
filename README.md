@@ -1,6 +1,6 @@
 # Project Overview:
 This is a full-stack flashcard web app built with React (frontend) and Django (backend). Users can create, view, and manage flashcards.
-I based this project on the tutorial from Real Python – Build a Flashcard App With Django and React: https://realpython.com/django-flashcards-app/.
+I based this project on the tutorial from Real Python – Build a Flashcard App With Django: https://realpython.com/django-flashcards-app/.
 
 This project helped me learn how to:
 1. Connect a frontend and backend using APIs
