@@ -13,10 +13,10 @@ This project helped me learn how to:
 1. Download the Project 
 2. Navigate to the backend folder via 'cd backend' command
 3. Create and activate a virtual environment via commands:
-python -m venv venv
-source venv/bin/activate  
-OR if using Windows
-venv\Scripts\activate
+'python -m venv venv' and then
+ 'source venv/bin/activate'
+ OR if using Windows
+ venv\Scripts\activate
 
 5. Run migrations:
 python manage.py migrate
