@@ -18,13 +18,13 @@ source venv/bin/activate
 OR if using Windows
 venv\Scripts\activate
 
-4. Run migrations:
+5. Run migrations:
 python manage.py migrate
 
-5. Start the development server:
+6. Start the development server:
 python manage.py runserver
 
-6. Visit the app in your browser:
+7. Visit the app in your browser:
 http://127.0.0.1:8000/
 
 
