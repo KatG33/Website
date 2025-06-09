@@ -24,6 +24,7 @@ I based this project on the tutorial from Real Python – Build a Flashcard App 
  'source venv/bin/activate'
  OR if using Windows
  venv\Scripts\activate
+4. Intall Dependencies: 'pip install -r requirements.txt'
 5. Run migrations:
 python manage.py migrate
 6. Start the development server:
