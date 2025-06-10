@@ -4,7 +4,7 @@ I based this project on the tutorial from Real Python – Build a Flashcard App 
 
 At this stage, the project uses HTML and CSS as static files served by the Django backend. In the future, I plan to develop the frontend further using React for a more dynamic user experience.
 Currently, users can create, view, edit, and delete flashcards to help them study and review topics. 
-I am planning to add features such as tag-based filtering, spaced repetition, and user authentication, which will make the app more powerful and personalised for learners.
+I am planning to add features such as tag-based filtering, spaced repetition, and user authentication, which will make the program more personalised and engaging to use. 
 
 
 ### This project utilises:
